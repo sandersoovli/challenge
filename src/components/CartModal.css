@@ -1,0 +1,37 @@
+.cart-modal {
+    border: none;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+    width: 90%;
+    max-width: 500px;
+  }
+  
+  .cart-modal h2 {
+    margin-top: 0;
+  }
+  
+  .cart-modal ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .cart-modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+  }
+  
+  .cart-modal-actions button {
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    background-color: #ffc404;
+    color: #000;
+    cursor: pointer;
+  }
+  
+  .cart-modal-actions button:hover {
+    background-color: #e6b800;
+  }
