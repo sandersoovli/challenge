@@ -3,7 +3,7 @@ import CartContext from '../store/CartContext';
 import Button from './UI/Button';
 
 
-const MealItem = ({ name, description, price, image }) => {
+const MealItem = ({ id, name, description, price, image }) => {
   const cartCtx = useContext(CartContext);
 
   const formattedPrice = new Intl.NumberFormat('et-EE', {  
@@ -12,7 +12,7 @@ const MealItem = ({ name, description, price, image }) => {
   }).format(price);
 
   const handleAddToCart = () => {
-    cartCtx.addItem({ name, description, price, image });
+    cartCtx.addItem({id, name, description, price, image, quantity: 1, });
     console.log(`${name} added to cart`);
   };
 
