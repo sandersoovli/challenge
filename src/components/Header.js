@@ -1,4 +1,5 @@
 import logo from '../assets/logo.jpg'
+import React from 'react'
 
 const Header = () => {
     return (

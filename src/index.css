@@ -71,6 +71,7 @@ h1 {
   overflow: hidden;
   text-align: center;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
 }
 
 .meal-item article {

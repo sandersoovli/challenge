@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import MealItem from "./MealItem";
 
 const Meals = () => {
   const [meals, setMeals] = useState([]);
@@ -11,8 +12,8 @@ const Meals = () => {
           throw new Error("Failed to fetch meals");
         }
         const data = await response.json();
-        console.log("Fetched meals:", data); // Kuvab andmed konsoolis
-        setMeals(data); // Salvestab andmed state'i
+        console.log("Fetched meals:", data);
+        setMeals(data);
       } catch (error) {
         console.error("Error fetching meals:", error);
       }
@@ -26,15 +27,18 @@ const Meals = () => {
       <h1>Meals</h1>
       <ul>
         {meals.map((meal) => (
-          <li key={meal.id}>
-            <h2>{meal.name}</h2>
-            <p>{meal.description}</p>
-            <p>Price: ${meal.price}</p>
-          </li>
+          <MealItem
+            key={meal.id}
+            name={meal.name}
+            description={meal.description}
+            price={meal.price}
+            image={meal.image}
+          />
         ))}
       </ul>
     </div>
   );
 };
+
 
 export default Meals;
