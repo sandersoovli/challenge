@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import CartContext from '../store/CartContext';
 import Button from './UI/Button';
 
+
 const MealItem = ({ name, description, price, image }) => {
+  const cartCtx = useContext(CartContext);
+
   const formattedPrice = new Intl.NumberFormat('et-EE', {  
     style: 'currency', 
     currency: 'EUR' 
   }).format(price);
 
   const handleAddToCart = () => {
+    cartCtx.addItem({ name, description, price, image });
     console.log(`${name} added to cart`);
   };
 
